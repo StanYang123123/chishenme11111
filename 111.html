@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>今天吃什么</title>
+</head>
+<body>
+	<h1>今天吃什么</h1>
+	<button onclick="start()">开始抽签</button>
+	<p id="result"></p>
+	<script>
+		function start() {
+			var num = Math.random(); // 生成一个随机数
+			if (num < 0.09) {
+				document.getElementById("result").innerHTML = "盖浇饭";
+			} else if (num < 0.18) {
+				document.getElementById("result").innerHTML = "麻辣烫";
+			} else if (num < 0.27) {
+				document.getElementById("result").innerHTML = "炸鸡";
+			} else if (num < 0.36) {
+				document.getElementById("result").innerHTML = "煲仔饭";
+			} else if (num < 0.45) {
+				document.getElementById("result").innerHTML = "螺蛳粉";
+			} else if (num < 0.54) {
+				document.getElementById("result").innerHTML = "酸辣粉";
+			} else if (num < 0.63) {
+				document.getElementById("result").innerHTML = "奶茶汉堡";
+			} else if (num < 0.72) {
+				document.getElementById("result").innerHTML = "寿司饭团";
+			} else if (num < 0.81) {
+				document.getElementById("result").innerHTML = "炒饭";
+			} else if (num < 0.90) {
+				document.getElementById("result").innerHTML = "卤肉饭";
+			} else {
+				document.getElementById("result").innerHTML = "痴痴地守护老公";
+			}
+		}
+	</script>
+</body>
+</html>
