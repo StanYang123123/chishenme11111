@@ -36,20 +36,39 @@
 		}
 
 		progress {
-			width: 100%;
+			-webkit-appearance: none;
+			appearance: none;
 			height: 20px;
-			margin-top: 1em;
+			width: 100%;
+			border-radius: 10px;
+			background-color: #ddd;
+			overflow: hidden;
+		}
+
+		progress::-webkit-progress-bar {
+			background-color: #ddd;
+			border-radius: 10px;
+		}
+
+		progress::-webkit-progress-value {
+			background-color: #4CAF50;
+			border-radius: 10px;
+			transition: width 0.5s ease-in-out;
 		}
 	</style>
 </head>
 <body>
 	<h1>今天吃什么</h1>
-	<button onclick="start()">开始抽签</button>
+	<button id="startButton" onclick="start()">开始抽签</button>
 	<p id="result"></p>
-	<progress id="progressBar" value="0" max="100"></progress>
+	<progress id="progress" value="0" max="100"></progress>
+
 	<script>
 		function start() {
-			var progressBar = document.getElementById("progressBar");
+			var progressBar = document.getElementById("progress");
+			var startButton = document.getElementById("startButton");
+
+			startButton.disabled = true; // disable the button
 			var progress = 0;
 
 			var intervalId = setInterval(function() {
@@ -82,6 +101,8 @@
 					} else {
 						document.getElementById("result").innerHTML = "痴痴地守护老公";
 					}
+					startButton.disabled = false; // enable the button
+
 				}
 			}, 200);
 		}
